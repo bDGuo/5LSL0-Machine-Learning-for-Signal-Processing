@@ -60,11 +60,12 @@ class Noisy_MNIST(Dataset):
 def create_dataloaders(data_loc, batch_size):
     Noisy_MNIST_train = Noisy_MNIST("train", data_loc)
     Noisy_MNIST_test  = Noisy_MNIST("test" , data_loc)
-    
-    Noisy_MNIST_train_loader =  DataLoader(Noisy_MNIST_train, batch_size=batch_size, shuffle=True,  drop_last=False)
+    train_set, val_set = torch.utils.data.random_split(Noisy_MNIST_train, [50000, 10000])
+    Noisy_MNIST_train_loader =  DataLoader(train_set, batch_size=batch_size, shuffle=True,  drop_last=False)
+    Noisy_MNIST_val_loader =  DataLoader(val_set, batch_size=batch_size, shuffle=True,  drop_last=False)
     Noisy_MNIST_test_loader  =  DataLoader(Noisy_MNIST_test , batch_size=batch_size, shuffle=False, drop_last=False)
     
-    return Noisy_MNIST_train_loader, Noisy_MNIST_test_loader
+    return Noisy_MNIST_train_loader, Noisy_MNIST_val_loader,Noisy_MNIST_test_loader
 
 # %% test if the dataloaders work
 if __name__ == "__main__":
@@ -73,7 +74,7 @@ if __name__ == "__main__":
     batch_size = 64
     
     # get dataloader
-    train_loader, test_loader = create_dataloaders(data_loc, batch_size)
+    train_loader,_, test_loader = create_dataloaders(data_loc, batch_size)
     
     # get some examples
     examples = enumerate(test_loader)
