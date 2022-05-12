@@ -130,3 +130,6 @@ dmypy.json
 
 # MNIST data
 MNIST/
+
+# model
+model*
