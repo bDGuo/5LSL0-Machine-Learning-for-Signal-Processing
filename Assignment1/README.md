@@ -3,3 +3,5 @@
 ## Due time: 12.May.2022 12:30
 
 ## Report in Latex
+
+## Ask me for trained model
