@@ -22,3 +22,60 @@ We would assume that $noise\sim \mathcal{N}(0,\sigma^2)$
 ## Q5
 
 I can not understand this question...  
+
+## Q6
+
+$\mathrm {X}=   \begin{bmatrix}
+0  & 0&1&1\\
+0  & 1&0&1
+\end{bmatrix},y = \begin{bmatrix}
+0  \\
+1  \\
+1  \\
+0  
+\end{bmatrix},\hat{\theta}=[0,0,0.5]^T$  
+Note that $w_0=w_1=0$, only b=0.5. It means that for arbitrary inputs, our ouputs is always 0.5, which is optimal in regression model yet not ideally fit the data.
+
+# Nonlinear functions  
+
+## Q7  
+
+- ReLu: $\frac{\mathrm{d} f}{\mathrm{d} x}= \begin{cases}
+1,  x>0 \\
+not\ differentiable, x=0 \\ 
+0,x<0
+\end{cases}$
+- Sigmoid: $\frac{\mathrm{d} f}{\mathrm{d} x}=(1-\sigma(x))(\sigma(x))$
+- Softmax: $\frac{\mathrm{d} f_j}{\mathrm{d} x}=-f_j^3$  
+
+## Q8
+
+- For ReLu, the gradient is 1;
+- For Sigmoid, the gradient is 0;
+- For Softmax, if only $x_j>>0$, and other $x_i$ is not in the same scale, the gradient will also be zero.  
+
+# Shallow(i.e. not deep...) nonlinear models
+
+## Q9
+
+With one more linear mapping, the model is still linear which would omit same parameters as Q6. So it does not suffice.
+
+## Q10
+
+decision boundary: $h_1-2*h_2=0.5$
+Check image under "figure/Q10.png"
+
+## Q11
+
+h1 = max(0,x1+x2),h2=max(0,x1+x2-1)  
+x1+x2<0, h1=0,h2=0  
+0<x1+x2<1,h1=x1+x2,h2=0  
+x1+x2>1,h1=x1+x2,h2=x1+x2+1,x1+x2=2.5
+
+# Binary classification with logistic regression
+
+## Q12
+
+For multi-class classfication problems, the softmax function would be useful It enables calculation of probability of groud truth among all classes.  
+
+## Q13
