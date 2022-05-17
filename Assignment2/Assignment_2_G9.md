@@ -63,7 +63,10 @@ not\ differentiable, x=0 \\
 0,x<0
 \end{cases}$
 - Sigmoid: $\frac{\mathrm{d} f}{\mathrm{d} x}=(1-\sigma(x))(\sigma(x))$
-- Softmax: $\frac{\mathrm{d} f_j}{\mathrm{d} x}=-f_j^3$  
+- Softmax: $\left\{\begin{array}{l}
+\frac{\partial f(x_j)}{\partial x_j} = \frac{1}{{\textstyle \sum_{i=0}^{m-1}\mathrm {exp}(x_i)}}f(x_j)(1-f(x_j))   \\
+\frac{\partial f(x_j)}{\partial x_i} = -f(x_j)f(x_i), i\ne j 
+\end{array}\right.$ 
 
 ## Q8
 
