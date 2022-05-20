@@ -133,3 +133,6 @@ MNIST/
 
 # model
 model/
+
+#
+Fast_MRI_Knee/
