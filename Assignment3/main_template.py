@@ -3,6 +3,7 @@
 import torch
 from tqdm import tqdm
 import matplotlib.pyplot as plt
+import os
 
 # local imports
 import MNIST_dataloader
@@ -13,7 +14,8 @@ torch.random.manual_seed(0)
 
 # %% preperations
 # define parameters
-data_loc = 'D://5LSL0-Datasets' #change the data location to something that works for you
+
+data_loc = os.path.join(os.path.abspath(__file__),"MNIST") #change the data location to something that works for you
 batch_size = 64
 no_epochs = 4
 learning_rate = 3e-4
