@@ -42,10 +42,10 @@ class Fast_MRI(Dataset):
 def create_dataloaders(data_loc, batch_size):
     dataset_train = Fast_MRI("train", data_loc)
     dataset_test  = Fast_MRI("test" , data_loc)
-    
+    # train_set,val_set = torch.utils.data.random_split(dataset_train,[500,150])
     Fast_MRI_train_loader =  DataLoader(dataset_train, batch_size=batch_size, shuffle=True,  drop_last=False)
     Fast_MRI_test_loader  =  DataLoader(dataset_test , batch_size=batch_size, shuffle=True, drop_last=False)
-    
+    # Fast_MRI_val_loader = DataLoader(val_set, batch_size=batch_size, shuffle=True,  drop_last=False)    
     return Fast_MRI_train_loader, Fast_MRI_test_loader
 
 # %% test if the dataloaders work
